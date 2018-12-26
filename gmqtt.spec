@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.2.0
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/c8/93/f47ceacea015aefbb7821728bc5ec3f280e8260b6296fb1440b52f5d06fe/gmqtt-0.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c8/93/f47ceacea015aefbb7821728bc5ec3f280e8260b6296fb1440b52f5d06fe/gmqtt-0.2.0.tar.gz
 Summary  : Client for MQTT protocol
@@ -64,7 +64,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542910071
+export SOURCE_DATE_EPOCH=1545835627
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
@@ -90,4 +91,6 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 %exclude /usr/lib/python3.7/site-packages/tests/__init__.py
 %exclude /usr/lib/python3.7/site-packages/tests/__pycache__/__init__.cpython-37.pyc
+%exclude /usr/lib/python3.7/site-packages/tests/__pycache__/utils.cpython-37.pyc
+%exclude /usr/lib/python3.7/site-packages/tests/utils.py
 /usr/lib/python3*/*
