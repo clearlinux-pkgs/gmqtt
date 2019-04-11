@@ -1,5 +1,5 @@
 PKG_NAME := gmqtt
-URL = https://files.pythonhosted.org/packages/bc/68/9728641d8d65f82979a92432269b766634632897504dab1e957306d10fc5/gmqtt-0.3.1.tar.gz
+URL = https://files.pythonhosted.org/packages/a4/78/348dcf028880ac40d043cfe35dc9f9104c3a695b4d65d02c9c1b163966ee/gmqtt-0.3.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
