@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.3.7
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/49/8a/2606e8259e2448506c870329238a2238b76132b2fd914fbde03047d17dc3/gmqtt-0.3.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/49/8a/2606e8259e2448506c870329238a2238b76132b2fd914fbde03047d17dc3/gmqtt-0.3.7.tar.gz
 Summary  : Client for MQTT protocol
