@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.4.4
-Release  : 28
+Release  : 29
 URL      : https://files.pythonhosted.org/packages/20/80/446aa14cd1bc09071f90b590bb685f37be94fb34e0f3b8e2497c692fc561/gmqtt-0.4.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/20/80/446aa14cd1bc09071f90b590bb685f37be94fb34e0f3b8e2497c692fc561/gmqtt-0.4.4.tar.gz
 Summary  : Client for MQTT protocol
@@ -52,7 +52,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570125889
+export SOURCE_DATE_EPOCH=1571163444
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -69,7 +69,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gmqtt
-cp LICENSE %{buildroot}/usr/share/package-licenses/gmqtt/LICENSE
+cp %{_builddir}/gmqtt-0.4.4/LICENSE %{buildroot}/usr/share/package-licenses/gmqtt/03c27e3e7b67f7256a1223d8c79042655f96cb28
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -79,13 +79,15 @@ rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__pycache__/__init__.cp
 rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__init__.py
 rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/utils.py
 rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__pycache__/utils.cpython-37.pyc
+rm -f %{buildroot}/usr/lib/python3.7/site-packages/examples/__init__.py
+rm -f %{buildroot}/usr/lib/python3.7/site-packages/examples/__pycache__/__init__.cpython-37.pyc
 
 %files
 %defattr(-,root,root,-)
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/gmqtt/LICENSE
+/usr/share/package-licenses/gmqtt/03c27e3e7b67f7256a1223d8c79042655f96cb28
 
 %files python
 %defattr(-,root,root,-)
