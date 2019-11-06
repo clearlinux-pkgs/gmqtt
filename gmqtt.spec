@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.5.0
-Release  : 31
+Release  : 32
 URL      : https://files.pythonhosted.org/packages/73/48/51650bb786506b831946bab42d0a29ad989047e074cad28f83997f290de6/gmqtt-0.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/73/48/51650bb786506b831946bab42d0a29ad989047e074cad28f83997f290de6/gmqtt-0.5.0.tar.gz
 Summary  : Client for MQTT protocol
@@ -16,7 +16,19 @@ Requires: gmqtt-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-[![Build Status](https://travis-ci.com/wialon/gmqtt.svg?branch=master)](https://travis-ci.com/wialon/gmqtt) [![codecov](https://codecov.io/gh/wialon/gmqtt/branch/master/graph/badge.svg)](https://codecov.io/gh/wialon/gmqtt)
+### Python MQTT client implementation.
+        
+        
+        ### Installation 
+        
+        The latest stable version is available in the Python Package Index (PyPi) and can be installed using
+        ```bash
+        pip3 install gmqtt
+        ```
+        
+        
+        ### Usage
+        #### Getting Started
 
 %package license
 Summary: license components for the gmqtt package.
@@ -54,7 +66,6 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 export SOURCE_DATE_EPOCH=1575378201
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -76,12 +87,12 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## Remove excluded files
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__pycache__/__init__.cpython-37.pyc
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__init__.py
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/utils.py
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/tests/__pycache__/utils.cpython-37.pyc
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/examples/__init__.py
-rm -f %{buildroot}/usr/lib/python3.7/site-packages/examples/__pycache__/__init__.cpython-37.pyc
+rm -f %{buildroot}/usr/lib/python3*/site-packages/tests/__pycache__/__init__.cpython-3*.pyc
+rm -f %{buildroot}/usr/lib/python3*/site-packages/tests/__init__.py
+rm -f %{buildroot}/usr/lib/python3*/site-packages/tests/utils.py
+rm -f %{buildroot}/usr/lib/python3*/site-packages/tests/__pycache__/utils.cpython-3*.pyc
+rm -f %{buildroot}/usr/lib/python3*/site-packages/examples/__init__.py
+rm -f %{buildroot}/usr/lib/python3*/site-packages/examples/__pycache__/__init__.cpython-3*.pyc
 
 %files
 %defattr(-,root,root,-)
