@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.5.1
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/17/ab/a3c884fb01e67df233ee878ff54dbb0c1e5297b828d7399afb7d089c68f7/gmqtt-0.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/17/ab/a3c884fb01e67df233ee878ff54dbb0c1e5297b828d7399afb7d089c68f7/gmqtt-0.5.1.tar.gz
 Summary  : Client for MQTT protocol
@@ -16,7 +16,20 @@ Requires: gmqtt-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-[![Build Status](https://travis-ci.com/wialon/gmqtt.svg?branch=master)](https://travis-ci.com/wialon/gmqtt) [![codecov](https://codecov.io/gh/wialon/gmqtt/branch/master/graph/badge.svg)](https://codecov.io/gh/wialon/gmqtt)
+### Python MQTT client implementation.
+        
+        ![](./static/logo.png)
+        
+        ### Installation 
+        
+        The latest stable version is available in the Python Package Index (PyPi) and can be installed using
+        ```bash
+        pip3 install gmqtt
+        ```
+        
+        
+        ### Usage
+        #### Getting Started
 
 %package license
 Summary: license components for the gmqtt package.
@@ -39,6 +52,7 @@ python components for the gmqtt package.
 Summary: python3 components for the gmqtt package.
 Group: Default
 Requires: python3-core
+Provides: pypi(gmqtt)
 
 %description python3
 python3 components for the gmqtt package.
@@ -53,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576525501
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583703127
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
