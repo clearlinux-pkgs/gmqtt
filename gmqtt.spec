@@ -4,7 +4,7 @@
 #
 Name     : gmqtt
 Version  : 0.5.1
-Release  : 41
+Release  : 42
 URL      : https://files.pythonhosted.org/packages/17/ab/a3c884fb01e67df233ee878ff54dbb0c1e5297b828d7399afb7d089c68f7/gmqtt-0.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/17/ab/a3c884fb01e67df233ee878ff54dbb0c1e5297b828d7399afb7d089c68f7/gmqtt-0.5.1.tar.gz
 Summary  : Client for MQTT protocol
@@ -67,15 +67,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1594837031
+export SOURCE_DATE_EPOCH=1636403364
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -89,8 +89,8 @@ echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 ## Remove excluded files
-rm -f %{buildroot}/usr/lib/python3*/site-packages/examples/__init__.py
-rm -f %{buildroot}/usr/lib/python3*/site-packages/examples/__pycache__/__init__.cpython-3*.pyc
+rm -f %{buildroot}*/usr/lib/python3*/site-packages/examples/__init__.py
+rm -f %{buildroot}*/usr/lib/python3*/site-packages/examples/__pycache__/__init__.cpython-3*.pyc
 ## install_append content
 rm -rf %{buildroot}/usr/lib/python3*/site-packages/tests
 ## install_append end
